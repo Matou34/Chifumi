@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jeux-shifumi</title>
+    <!--------bootsrap------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"   
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./jeux-css/jeux.css">
+    <!-- JQUERY -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<!--/---------------------- Titre ---------------------------------/-->
+    <section class="titre">
+        <a class="a" href="./jeux.html"><h1><span id="P">Chi</span><span id="F">FU</span><span id="C">Mi</span></h1></a>
+
+<!--/---------------------- Choix du nombre de joueurs -----------------------/-->
+        <div class="container-nbJoueur">
+            <h2 class="H2" id="joueur">Nombres de joueurs</h2>
+            <span class="custom-btn btn_1 nbJoueurs" id="Contre-ordi" name="1">1 Joueur</span>
+            <span class="custom-btn btn_2 nbJoueurs" id="btn2joueur" name="2" >2 Joueurs</span>
+        </div>
+    </section>
+
+<!-- /---------------choix des Noms de joueurs et du mode multi manche------------------------ /-->
+    <section class="Container">
+        <h2 class="H2">Entrer vos blazes</h2>
+<!-- /mode multimanche ou non/ -->
+        <h3 class="H3">Mode multi-manches</h3>
+        <div id="Container_radio">
+            <div>
+                <label class="Radio MultiIsChecked" id="Multi_Manche" for="MultiManche">Oui</label>
+                <input type="radio" id="MultiManche" class="d-none" name="isMultiManches" value="true" checked />
+            </div>
+            <div>
+                <label class="Radio" id="NoMulti_Manche"  for="NoMultiManche">Non</label>
+                <input type="radio" id="NoMultiManche" class="d-none" name="isMultiManches" value=""  />
+            </div>
+        </div>
+
+<!-- /saisi des nom de joueur/ -->
+        <div class="input">
+            <div class="container_input">
+                <label for="jo1">Joueur 1 :</label>
+                <input class="jo" id="jo1" type="text" value="">     
+            </div>
+            <div class="container_input secondInput">
+                <label  for="jo2">Joueur 2 :</label>
+                <input class="jo" id="jo2" type="text" value="">
+            </div>
+        </div>
+        <div>
+
+<!--/---------------------------Boutton jouuer et retour---------------------------/-->
+            <a class="custom-btn btn_1" href="./index.html">Retours</a>
+            <button class="custom-btn btn_2" id="Blazes" disabled>Play</button>
+        </div>
+    </section>
+
+
+
+
+<!--/-----------------------------section jeux shifumi------------------/-->
+
+    <section class="J1" id="container-image" >
+        <h2 class="H2">Game</h2>
+        <div class="container_score">
+
+<!-- /Scrore pour multimanche/ -->
+            <div class="ContainerScore">
+                <p id="j1"></p>
+                <div id="scoreJ1" class="scrore"></div>
+            </div>
+            <div class="ContainerScore">
+                <p id="j2"></p>
+                <div id="scoreJ2" class="scrore"></div>
+            </div>
+        </div>
+<!-- /Joueur 1 et 2/ -->
+        <div>
+            <p class="Nom" id="Blaze">Joueur 1</p>
+        </div>
+
+        <div>
+            <p class="Nom" id="Blaze2">Joueur 2</p>
+        </div>
+
+<!-- /card pierre feuille ciseaux/ -->
+        <div id="PFC">
+            <div class="select tv" id="ciseaux"><img src="./image/ciseaux.svg" alt="" width="70"></div>
+            <div class="select tv" id="feuille"><img src="./image/Feuille.svg" alt="" width="100"></div>
+            <div class="select tv" id="pierre"><img src="./image/Pierre2.svg" alt="" width="80"></div>
+        </div>
+
+<!-- /résultat game pop up/ -->
+        <div class="resultat">
+            <div>
+                <h3 id="titre_popUp">
+                    Résultats game
+                </h3>
+
+                <div class="Resultat"></div>
+
+                <div class="boutton_popUp" data-bs-backdrop="static">
+
+<!-- /Boutton recommencer et retours dans la pop up de résultat/ -->
+                    <a class="custom-btn btn-3" href="./jeux.html">Retours</a>
+                    <span class="custom-btn btn-3" id="recommencer" data-bs-dismiss="modal">Recommencer</span>
+                </div>        
+            </div>
+        </div>
+
+<!-- /Konamicode/ -->
+        <img class="Konami" src="./image/giphy.gif" alt="">
+
+    </section>
+
+
+<!-- /Javascript/ -->
+
+<script src="./script.js"></script>
+
+</body>
+</html>

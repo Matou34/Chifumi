@@ -1,0 +1,97 @@
+$couleurPlusClaire: #f4a261;
+$couleurPlusFoncé: #e76f51;
+
+//------------------------------------------font-----------------------------------------------//
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+//--------------------------------------Body--------------------------------------------------//
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #2c5fb2;
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+/*----------------------------------------------- titre --------------------------------------------*/
+h1 {
+	color: $couleurPlusClaire;
+	font-size: 14vw;
+	position: relative;
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.3vw #f7f7fe;
+}
+
+h1::before {
+	color: $couleurPlusFoncé;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 2px solid $couleurPlusFoncé;
+	-webkit-text-stroke: 0vw #f7f7fe;
+	animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+/* boutton */
+section {
+    text-align: center;
+    margin-top: 4em;
+}
+
+.btn_1 {
+    color: $couleurPlusFoncé;
+    border: 1px solid $couleurPlusFoncé;
+    box-shadow: 0 0 5px $couleurPlusFoncé, 0 0 5px $couleurPlusFoncé inset;
+    font-size: 4em;
+}
+
+.btn_1:after {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn_1:hover {
+    color: $couleurPlusFoncé;
+}
+
+.btn_1:hover:after {
+    background: #fff352;
+    -webkit-transform: scale(2) rotate(180deg);
+    transform: scale(2) rotate(180deg);
+}
+
+//responsive
+@media screen and (max-width: 630px) {
+	
+	.btn_1 {
+		font-size: 2em;
+	}
+}
+
+
